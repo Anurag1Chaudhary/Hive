@@ -22,6 +22,7 @@ from app.validation import CleanCampaign
 
 log = logging.getLogger(__name__)
 PROMPT_VERSION = "v1"
+NON_RETRYABLE_STATUS = {401, 403, 404}
 
 
 class Channel(str, Enum):
@@ -199,5 +200,9 @@ def enrich(c: CleanCampaign, client: ChatClient, max_retries: int | None = None)
         except Exception as e:  # network / rate limit / API errors
             errors.append(f"attempt {attempt}: llm call failed: {type(e).__name__}: {str(e)[:200]}")
             log.warning("%s llm error: %s", c.source_id, e)
+            # Auth / unknown model / forbidden will never succeed on retry: fail fast.
+            # (400 is NOT here: Groq returns 400 `tool_use_failed` for malformed tool calls, which is retryable.)
+            if getattr(e, "status_code", None) in NON_RETRYABLE_STATUS:
+                break
     return EnrichmentResult(status="fallback", channel=rule_channel(c.raw_channel) or Channel.other,
-                            attempts=max_retries + 1, errors=errors)
+                            attempts=len(errors), errors=errors)

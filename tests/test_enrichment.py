@@ -54,3 +54,20 @@ def test_rule_channel_variants():
     assert rule_channel("adwords") == Channel.google_ads
     assert rule_channel("Klaviyo email") == Channel.email
     assert rule_channel("???") is None
+
+
+class FakeStatusError(Exception):
+    def __init__(self, status_code):
+        super().__init__(f"status {status_code}")
+        self.status_code = status_code
+
+
+def test_non_retryable_api_error_fails_fast():
+    client = FakeClient([FakeStatusError(404), GOOD, GOOD])
+    r = enrich(camp(), client, max_retries=2)
+    assert r.status == "fallback" and r.attempts == 1 and len(client.calls) == 1
+
+
+def test_retryable_api_error_is_retried():
+    r = enrich(camp(), FakeClient([FakeStatusError(429), GOOD]), max_retries=2)
+    assert r.status == "ok" and r.attempts == 2

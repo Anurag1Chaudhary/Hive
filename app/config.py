@@ -6,7 +6,7 @@ class Settings(BaseSettings):
 
     database_url: str = "postgresql+psycopg://hive:hive@localhost:5442/hive"
     groq_api_key: str = ""
-    groq_model: str = "llama-3.3-70b-versatile"
+    groq_model: str = "openai/gpt-oss-120b"
     llm_max_retries: int = 2
     raw_data_path: str = "data/campaigns_raw.json"
 

@@ -80,7 +80,7 @@ saves cost and keeps scores stable between runs. `fallback` rows are retried on 
 
 ## AI & prompt choices
 
-- **Model:** Groq `llama-3.3-70b-versatile` (free tier, OpenAI-compatible tool calling). It's configurable via
+- **Model:** Groq `openai/gpt-oss-120b` (free tier, OpenAI-compatible tool calling). It's configurable via
   `GROQ_MODEL`, and the key is only ever read from the env var.
 - **Structured output via forced tool calling.** `tool_choice` is pinned to `record_enrichment`, and the
   parameters are a JSON schema with **enums** for `channel` and `objective`, plus `health_score` limited to
