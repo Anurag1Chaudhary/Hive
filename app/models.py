@@ -70,6 +70,6 @@ class IngestRowResult(Base):
     run_id: Mapped[int] = mapped_column(ForeignKey("ingest_runs.id"), index=True)
     row_index: Mapped[int] = mapped_column(Integer)
     source_id: Mapped[str | None] = mapped_column(String(64))
-    status: Mapped[str] = mapped_column(String(16))  # ok | fallback | rejected | error
+    status: Mapped[str] = mapped_column(String(32))  # ok | fallback | skipped_unchanged | rejected | error
     reasons: Mapped[list] = mapped_column(JsonType, default=list)
     run: Mapped[IngestRun] = relationship(back_populates="rows")
