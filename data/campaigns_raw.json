@@ -1,0 +1,172 @@
+{
+  "brand": "Aster & Oak (synthetic D2C brand — skincare)",
+  "currency": "INR",
+  "note": "Raw export from a fictional ad-ops sheet. Field quality is intentionally inconsistent. Do not assume anything is clean.",
+  "campaigns": [
+    {
+      "id": "cmp_001",
+      "name": "Diwali Dhamaka Blowout — Sitewide 40% OFF",
+      "channel": "fb",
+      "description": "Festive sitewide push. Broad audience, top-of-funnel + promo.",
+      "spend": 185000,
+      "impressions": 2450000,
+      "clicks": 38200,
+      "conversions": 1420,
+      "revenue": 2130000
+    },
+    {
+      "id": "cmp_002",
+      "name": "Retarget cart abandoners (30d window)",
+      "channel": "Meta",
+      "description": "Dynamic product ads to users who added to cart but didn't buy.",
+      "spend": "42,500",
+      "impressions": 410000,
+      "clicks": 15600,
+      "conversions": 980,
+      "revenue": 1470000
+    },
+    {
+      "id": "cmp_003",
+      "name": "Brand Awareness — Hero SKU (Vitamin C Serum)",
+      "channel": "YouTube",
+      "description": "15s + 30s video, awareness objective, no direct-response optimization.",
+      "spend": 96000,
+      "impressions": 5100000,
+      "clicks": 8100,
+      "conversions": 44,
+      "revenue": 66000
+    },
+    {
+      "id": "cmp_004",
+      "name": "Search — Branded terms",
+      "channel": "google",
+      "description": "Defensive branded search. High intent.",
+      "spend": 28000,
+      "impressions": 92000,
+      "clicks": 11400,
+      "conversions": 1310,
+      "revenue": 1965000
+    },
+    {
+      "id": "cmp_005",
+      "name": "Search — Non-brand 'best vitamin c serum india'",
+      "channel": "adwords",
+      "description": "Generic high-competition non-brand terms.",
+      "spend": 134000,
+      "impressions": 620000,
+      "clicks": 21800,
+      "conversions": 610,
+      "revenue": 915000
+    },
+    {
+      "id": "cmp_006",
+      "name": "Winback — lapsed 90d customers",
+      "channel": "Klaviyo email",
+      "description": "Flow targeting customers with no purchase in 90 days. 15% off code.",
+      "spend": 0,
+      "impressions": 88000,
+      "clicks": 9400,
+      "conversions": 720,
+      "revenue": 1080000
+    },
+    {
+      "id": "cmp_007",
+      "name": "IG Reels — UGC creator batch #4",
+      "channel": "IG",
+      "description": "Whitelisted creator content, consideration.",
+      "spend": 71000,
+      "impressions": 1980000,
+      "clicks": 26700,
+      "conversions": 540,
+      "revenue": 756000
+    },
+    {
+      "id": "cmp_008",
+      "name": "New customer acquisition — prospecting LAL 1%",
+      "channel": "Facebook Ads",
+      "description": "Lookalike 1% of purchasers, conversion optimized.",
+      "spend": 210000,
+      "impressions": 3120000,
+      "clicks": 41000,
+      "conversions": 1180,
+      "revenue": 1652000
+    },
+    {
+      "id": "cmp_009",
+      "name": "Abandoned checkout SMS nudge",
+      "channel": "sms",
+      "description": "2-message SMS flow, 1hr + 24hr.",
+      "spend": 9500,
+      "impressions": null,
+      "clicks": 3100,
+      "conversions": 410,
+      "revenue": 615000
+    },
+    {
+      "id": "cmp_010",
+      "name": "Performance Max — full catalog",
+      "channel": "Google Ads",
+      "description": "PMax across all SKUs, tCPA.",
+      "spend": 175000,
+      "impressions": 4400000,
+      "clicks": 33900,
+      "conversions": 890,
+      "revenue": 1246000
+    },
+    {
+      "id": "cmp_011",
+      "name": "",
+      "channel": "yt",
+      "description": "Bumper ads, reach buy. (Name was blank in the export.)",
+      "spend": 40000,
+      "impressions": 2200000,
+      "clicks": 1200,
+      "conversions": 12,
+      "revenue": 18000
+    },
+    {
+      "id": "cmp_012",
+      "name": "Influencer flat-fee — mega creator (one-off)",
+      "channel": "influencer",
+      "description": "Single flat-fee post. No pixel/tracking on landing.",
+      "spend": 350000,
+      "impressions": null,
+      "clicks": null,
+      "conversions": null,
+      "revenue": null
+    },
+    {
+      "id": "cmp_013",
+      "name": "Test — DO NOT USE (draft row)",
+      "channel": "???",
+      "description": "asdf test test ignore",
+      "spend": "N/A",
+      "impressions": "lots",
+      "clicks": -5,
+      "conversions": "many",
+      "revenue": "N/A"
+    },
+    {
+      "id": "cmp_008",
+      "name": "New customer acquisition — prospecting LAL 1% (DUPLICATE ROW)",
+      "channel": "meta ads",
+      "description": "Duplicate id of cmp_008 with slightly different numbers — dedupe or flag.",
+      "spend": 208500,
+      "impressions": 3110000,
+      "clicks": 40800,
+      "conversions": 1175,
+      "revenue": 1649000
+    },
+    {
+      "id": "cmp_014",
+      "name": "Retention — VIP early access (loyalty tier)",
+      "channel": "email",
+      "description": "Early access drop for top 5% LTV customers.",
+      "spend": -1200,
+      "impressions": 44000,
+      "clicks": 6800,
+      "conversions": 890,
+      "revenue": 1602000
+    }
+  ]
+}
