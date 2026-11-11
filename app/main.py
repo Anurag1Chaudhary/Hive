@@ -9,6 +9,7 @@ from app.config import settings
 from app.db import Base, engine, get_session
 from app.enrichment import Channel, GroqClient, Objective
 from app.ingest import load_raw_file, run_ingest
+from app.insights import generate_insights
 from app.models import Campaign, IngestRun
 from app.schemas import CampaignOut, IngestRequest, IngestSummary, RowResult
 
@@ -68,6 +69,13 @@ def list_campaigns(
         q = q.where(Campaign.enrichment_status == status)
     q = q.order_by(Campaign.health_score.desc().nulls_last(), Campaign.source_id).limit(limit).offset(offset)
     return db.scalars(q).all()
+
+
+@app.get("/campaigns/insights")
+def insights(db: Session = Depends(get_session), client=Depends(get_llm_client)):
+    """Declared before /campaigns/{source_id} so 'insights' isn't treated as an id.
+    Always returns SQL aggregates; observations are null with llm_error if the LLM fails."""
+    return generate_insights(db, client)
 
 
 @app.get("/campaigns/{source_id}", response_model=CampaignOut)
